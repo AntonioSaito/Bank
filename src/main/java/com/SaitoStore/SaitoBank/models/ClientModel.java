@@ -1,5 +1,6 @@
 package com.SaitoStore.SaitoBank.models;
 
+import com.SaitoStore.SaitoBank.dtos.ClientRecordDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,4 +29,10 @@ public class ClientModel {
     private AccountModel account;
 
 
+    public ClientModel(ClientRecordDto clientRecordDto) {
+        this.name = clientRecordDto.name();
+        this.age = clientRecordDto.age();
+        this.cpf = clientRecordDto.cpf();
+        this.email = clientRecordDto.email();
+    }
 }
