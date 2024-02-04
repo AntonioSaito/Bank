@@ -1,5 +1,6 @@
 package com.SaitoStore.SaitoBank.models;
 
+import com.SaitoStore.SaitoBank.dtos.ClientRecordDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -36,4 +37,10 @@ public class ClientModel {
     @OneToMany(mappedBy = "clientModel", cascade = CascadeType.ALL)
     private List<AccountModel> Accounts;
 
+    public ClientModel(ClientRecordDto clientRecordDto) {
+        this.name = clientRecordDto.name();
+        this.age = clientRecordDto.age();
+        this.cpf = clientRecordDto.cpf();
+        this.email = clientRecordDto.email();
+    }
 }
