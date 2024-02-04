@@ -1,5 +1,6 @@
 package com.SaitoStore.SaitoBank.models;
 
+import com.SaitoStore.SaitoBank.dtos.ClientRecordDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,7 +21,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_CLIENT")
-public class ClientModel {
+public class ClientModel extends RepresentationModel<ClientModel> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +36,6 @@ public class ClientModel {
     private LocalDate dateRegisterClient;
 
     @OneToMany(mappedBy = "clientModel", cascade = CascadeType.ALL)
-    private List<AccountModel> Accounts;
-
+    private List<AccountModel> accountModel;
+    
 }

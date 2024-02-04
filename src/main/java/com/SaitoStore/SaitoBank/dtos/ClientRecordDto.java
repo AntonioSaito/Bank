@@ -8,13 +8,6 @@ import org.hibernate.validator.constraints.br.CPF;
 import java.time.LocalDate;
 
 
-public record ClientRecordDto(
-        String numberAccount,
-        @NotBlank String name,
-        @NotNull Integer age,
-        @Email String email,
-        LocalDate dataCadastro
-){
-
-
+public record ClientRecordDto(String numberAccount, @NotBlank String name,
+                              @NotNull Integer age, @Email String email, LocalDate dateRegisterClient) {
 }
