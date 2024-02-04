@@ -2,9 +2,11 @@ package com.SaitoStore.SaitoBank.repositories;
 
 import com.SaitoStore.SaitoBank.models.ClientModel;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.UUID;
 
-public interface ClientRepository extends JpaRepository<ClientModel, Long>{
-    Optional<ClientModel> findByIdClient(long idClient);
+@Repository
+public interface ClientRepository extends JpaRepository<ClientModel, UUID>{
+
 }

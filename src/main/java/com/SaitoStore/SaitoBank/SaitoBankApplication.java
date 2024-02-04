@@ -10,4 +10,6 @@ public class SaitoBankApplication {
 		SpringApplication.run(SaitoBankApplication.class, args);
 	}
 
+
+
 }
