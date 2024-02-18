@@ -2,11 +2,12 @@ package com.SaitoStore.SaitoBank.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name="TB_ACCOUNT")
-public class AccountModel extends RepresentationModel<AccountModel> {
+public class AccountModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
